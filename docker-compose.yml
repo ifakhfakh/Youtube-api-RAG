@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  proxy:
+    image: ubuntu:24.04
+    ports:
+      - "8888:8888"
+    command: >
+      bash -c "apt-get update && apt-get install -y squid &&
+      echo 'http_port 8888' > /etc/squid/squid.conf &&
+      echo 'cache_mem 256 MB' >> /etc/squid/squid.conf &&
+      echo 'acl localnet src 0.0.0.0/0.0.0.0' >> /etc/squid/squid.conf &&
+      echo 'http_access allow localnet' >> /etc/squid/squid.conf &&
+      echo 'http_access allow localhost' >> /etc/squid/squid.conf &&
+      echo 'http_access deny all' >> /etc/squid/squid.conf &&
+      echo 'coredump_dir /var/spool/squid' >> /etc/squid/squid.conf &&
+      squid -N -d 1"
+    volumes:
+      - /var/log/squid
