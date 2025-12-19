@@ -15,6 +15,7 @@ from langchain_core.output_parsers import StrOutputParser
 
 
 
+
 def format_timestamp(seconds: float) -> str:
     """Convert seconds to HH:MM:SS format"""
     hours = int(seconds // 3600)
@@ -26,7 +27,7 @@ def format_timestamp(seconds: float) -> str:
     return f"{minutes:02d}:{secs:02d}"
 
 
-def analyze_with_groq(query, search_results):
+# def analyze_with_groq(query, search_results):
     """
     Use Groq to analyze search results and provide a comprehensible step-by-step breakdown
     """

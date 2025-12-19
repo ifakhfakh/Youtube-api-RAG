@@ -314,6 +314,14 @@ for query in test_queries:
 
 n_results = 4
 query = "How to install Ubuntu?"
+model = embedding_fn._model # Access the internal model
+raw_vector = model.encode(["How to install Ubuntu?"])
+
+# 2. Check the length (Magnitude)
+import numpy as np
+length = np.linalg.norm(raw_vector)
+print(f"Real Value:  {length:.20f}")
+
 results = collection.query(
     query_texts=[query],
     n_results=n_results

@@ -1,0 +1,63 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            }
+        },
+                {
+            "name": "Python: movies",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/movies"
+            }
+        },
+        {
+            "name": "Python: app_demo.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/app_demo.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            }
+        },
+        {
+            "name": "Python: lang-chain.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/lang-chain.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "GROQ_API_KEY": "${env:GROQ_API_KEY}"
+            }
+        },
+        {
+            "name": "Python: app.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/app.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "HTTP_PROXY": "${env:HTTP_PROXY}",
+                "HTTPS_PROXY": "${env:HTTPS_PROXY}"
+            }
+        }
+    ]
+}
